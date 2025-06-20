@@ -121,6 +121,7 @@ button:disabled {
 .question-text {
     font-size: 1.25rem;
     margin-bottom: 1.5rem;
+    color: #222 !important; /* Texte foncé pour la question */
 }
 
 .options-container {
@@ -138,6 +139,7 @@ button:disabled {
     cursor: pointer;
     text-align: left;
     transition: background-color 0.3s, border-color 0.3s;
+    color: #222 !important; /* Texte foncé sur fond clair */
 }
 
 .option:hover {
@@ -148,7 +150,7 @@ button:disabled {
 .option.selected {
     background-color: var(--accent-color);
     border-color: var(--primary-color);
-    color: white;
+    color: #fff !important; /* Texte blanc sur fond bleu */
     font-weight: bold;
 }
 
