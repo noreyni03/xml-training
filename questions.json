@@ -1,0 +1,197 @@
+[
+  {
+    "id": 1,
+    "questionText": "D'après le cours, que signifie l'acronyme SGML ?",
+    "options": [
+      "Simple Generalized Markup Language",
+      "Standard Graphics Mapping Language",
+      "Standard Generalized Markup Language",
+      "Systematic General Markup Language"
+    ],
+    "correctAnswers": [2],
+    "explanation": "SGML signifie 'Standard Generalized Markup Language'. C'est une norme internationale (ISO 8879) qui a servi de base à la création de HTML et XML.",
+    "sourceSlide": 8
+  },
+  {
+    "id": 2,
+    "questionText": "Un document XML qui respecte les règles de syntaxe (imbrication, racine unique...) mais qui n'est pas forcément associé à une DTD est dit :",
+    "options": [
+      "Valide",
+      "Bien formé",
+      "Complet",
+      "Correct"
+    ],
+    "correctAnswers": [1],
+    "explanation": "Un document est 'bien formé' s'il respecte les règles syntaxiques de base. Il devient 'valide' seulement s'il est bien formé ET conforme à une définition (DTD ou Schéma).",
+    "sourceSlide": 33
+  },
+  {
+    "id": 3,
+    "questionText": "Laquelle de ces affirmations sur les DTD (Document Type Definition) est FAUSSE ?",
+    "options": [
+      "Une DTD est un document XML.",
+      "Une DTD permet de définir le vocabulaire et la structure d'un document XML.",
+      "Une DTD peut être interne ou externe au document XML.",
+      "La syntaxe d'une DTD est héritée de SGML."
+    ],
+    "correctAnswers": [0],
+    "explanation": "Une DTD n'est PAS un document XML. Elle a sa propre syntaxe, héritée de SGML, ce qui est une de ses principales limitations par rapport aux Schémas XML.",
+    "sourceSlide": 43
+  },
+  {
+    "id": 4,
+    "questionText": "Dans une DTD, comment déclare-t-on un élément 'produit' qui peut apparaître zéro ou plusieurs fois ?",
+    "options": [
+      "<!ELEMENT produit (produit?)>",
+      "<!ELEMENT produit (produit+)>",
+      "<!ELEMENT produit (produit*)>",
+      "<!ELEMENT produit (produit|)>"
+    ],
+    "correctAnswers": [2],
+    "explanation": "Le quantificateur '*' signifie 'zéro ou plusieurs fois' (répétitif). '?' signifie optionnel (0 ou 1), et '+' signifie 'une ou plusieurs fois'.",
+    "sourceSlide": 46
+  },
+  {
+    "id": 5,
+    "questionText": "Quelle est la principale critique faite au langage HTML qui a motivé la création de XML ?",
+    "options": [
+      "Il n'est pas compatible avec le web.",
+      "Il est trop complexe à apprendre.",
+      "Il n'est pas extensible (nombre de balises fixe).",
+      "Il ne permet pas de faire des liens hypertextes."
+    ],
+    "correctAnswers": [2],
+    "explanation": "HTML a un nombre fixe de balises dédiées à la présentation. XML a été créé pour être extensible, permettant aux utilisateurs de définir leurs propres balises sémantiques.",
+    "sourceSlide": 11
+  },
+  {
+    "id": 6,
+    "questionText": "Lequel de ces éléments NE FAIT PAS partie de la 'galaxie de standards' XML présentée ?",
+    "options": [
+      "XSL",
+      "XQuery",
+      "Java",
+      "DOM"
+    ],
+    "correctAnswers": [2],
+    "explanation": "Java est un langage de programmation, mais pas un standard XML en soi. XSL, XQuery, DOM, SAX, et XSchema sont tous des standards ou des API directement liés à l'écosystème XML.",
+    "sourceSlide": 15
+  },
+  {
+    "id": 7,
+    "questionText": "Dans un document XML, la partie qui contient les instructions de traitement et la déclaration DOCTYPE est appelée :",
+    "options": [
+      "Le corps",
+      "La racine",
+      "Le prologue",
+      "L'en-tête"
+    ],
+    "correctAnswers": [2],
+    "explanation": "Le prologue est la première partie d'un document XML, située avant l'élément racine. Il contient la déclaration XML, les instructions de traitement et la déclaration de type de document (DOCTYPE).",
+    "sourceSlide": 20
+  },
+  {
+    "id": 8,
+    "questionText": "Que fait l'instruction XSLT <xsl:value-of select='...'/> ?",
+    "options": [
+      "Elle crée une nouvelle boucle.",
+      "Elle insère la valeur textuelle du nœud sélectionné dans le document de sortie.",
+      "Elle applique un template à un nœud.",
+      "Elle copie un nœud entier avec ses enfants."
+    ],
+    "correctAnswers": [1],
+    "explanation": "<xsl:value-of> est utilisé pour extraire et afficher la valeur textuelle d'un élément ou d'un attribut sélectionné par une expression XPath.",
+    "sourceSlide": 173
+  },
+  {
+    "id": 9,
+    "questionText": "Lequel de ces langages est utilisé pour naviguer dans l'arborescence d'un document XML et sélectionner des nœuds ?",
+    "options": [
+      "CSS",
+      "XPath",
+      "XLink",
+      "XPointer"
+    ],
+    "correctAnswers": [1],
+    "explanation": "XPath est le langage d'expression conçu spécifiquement pour adresser et sélectionner des parties d'un document XML. Il est essentiel pour XSLT.",
+    "sourceSlide": 145
+  },
+  {
+    "id": 10,
+    "questionText": "Quelle est la différence fondamentale entre XML Schema (XSD) et DTD ?",
+    "options": [
+      "Seul XSD peut définir des attributs.",
+      "XSD utilise une syntaxe XML, contrairement à DTD.",
+      "Seul DTD peut être inclus dans le fichier XML.",
+      "XSD est plus simple que DTD."
+    ],
+    "correctAnswers": [1],
+    "explanation": "Un des avantages majeurs de XML Schema (XSD) est qu'il est lui-même écrit en XML, ce qui le rend extensible et analysable avec les mêmes outils. Il supporte aussi un typage de données beaucoup plus riche.",
+    "sourceSlide": 63
+  },
+  {
+    "id": 11,
+    "questionText": "Dans une DTD, le mot-clé #IMPLIED pour un attribut signifie que :",
+    "options": [
+      "L'attribut est obligatoire.",
+      "L'attribut a une valeur fixe.",
+      "L'attribut est optionnel.",
+      "La valeur de l'attribut est implicite."
+    ],
+    "correctAnswers": [2],
+    "explanation": "#IMPLIED indique que la présence de l'attribut n'est pas obligatoire. #REQUIRED le rend obligatoire.",
+    "sourceSlide": 45
+  },
+  {
+    "id": 12,
+    "questionText": "En XPath, que sélectionne l'expression `//livre` ?",
+    "options": [
+      "Uniquement les éléments 'livre' qui sont enfants directs de la racine.",
+      "Tous les éléments 'livre' n'importe où dans le document.",
+      "Le premier élément 'livre' trouvé.",
+      "Un commentaire contenant le mot 'livre'."
+    ],
+    "correctAnswers": [1],
+    "explanation": "Le double slash `//` est un raccourci pour l'axe `descendant-or-self::node()`, ce qui signifie qu'il sélectionne tous les nœuds correspondants à n'importe quelle profondeur dans le document.",
+    "sourceSlide": 151
+  },
+  {
+    "id": 13,
+    "questionText": "L'utilisation de CSS avec XML permet principalement de :",
+    "options": [
+      "Valider la structure du document.",
+      "Transformer le XML en un autre format (ex: HTML).",
+      "Manipuler la base de données source.",
+      "Appliquer un style de présentation pour l'affichage."
+    ],
+    "correctAnswers": [3],
+    "explanation": "CSS (Cascading Style Sheets) est un langage de mise en forme. Lorsqu'il est utilisé avec XML, il permet de définir comment les balises XML doivent être affichées par un navigateur, mais il ne peut pas transformer la structure.",
+    "sourceSlide": 134
+  },
+  {
+    "id": 14,
+    "questionText": "Pour garantir l'unicité d'une valeur (comme une clé primaire) dans un document validé par un Schéma XML (XSD), on utilise l'élément :",
+    "options": [
+      "<xsd:unique>",
+      "<xsd:key>",
+      "<xsd:primaryKey>",
+      "Les deux, <xsd:unique> et <xsd:key>"
+    ],
+    "correctAnswers": [3],
+    "explanation": "On peut utiliser <xsd:unique> pour garantir l'unicité, et <xsd:key> qui garantit aussi l'unicité tout en spécifiant que la valeur peut être utilisée comme clé pour des références (<xsd:keyref>).",
+    "sourceSlide": 107
+  },
+  {
+    "id": 15,
+    "questionText": "Une section CDATA <![CDATA[...]]> permet de :",
+    "options": [
+      "Cacher des données à l'utilisateur.",
+      "Inclure du code binaire.",
+      "Inclure du texte contenant des caractères spéciaux (<, &) sans que le parseur ne les interprète.",
+      "Définir un type de données complexe."
+    ],
+    "correctAnswers": [2],
+    "explanation": "CDATA (Character Data) crée une section où le contenu n'est pas analysé (parsed) par le processeur XML. C'est utile pour insérer des blocs de code ou du texte qui contient des caractères qui pourraient autrement être interprétés comme du balisage.",
+    "sourceSlide": 32
+  }
+]
