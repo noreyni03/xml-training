@@ -1,0 +1,210 @@
+/* --- Variables de Thème (inspirées du diaporama) --- */
+:root {
+    --primary-color: #002060; /* Bleu foncé du titre */
+    --secondary-color: #44546A; /* Bleu-gris des blocs */
+    --accent-color: #5B9BD5;   /* Bleu clair */
+    --background-color: #F0F2F5;
+    --text-color: #333;
+    --card-bg: #FFFFFF;
+    --correct-color: #28a745;
+    --incorrect-color: #dc3545;
+    --neutral-color: #6c757d;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* --- Styles Généraux --- */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    box-shadow: var(--box-shadow);
+}
+
+main {
+    width: 100%;
+    max-width: 800px;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+/* --- Gestion des écrans --- */
+.screen {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.screen.active {
+    display: flex;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Boutons --- */
+button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 1rem;
+}
+
+button:hover:not(:disabled) {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+button:disabled {
+    background-color: var(--neutral-color);
+    cursor: not-allowed;
+}
+
+/* --- Écran du Quiz --- */
+#quiz-header {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+#question-counter {
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+#progress-bar-container {
+    width: 100%;
+    height: 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: var(--accent-color);
+    transition: width 0.4s ease-in-out;
+}
+
+.question-card {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    width: 100%;
+}
+
+.question-text {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.option {
+    display: block;
+    background-color: #f8f9fa;
+    border: 2px solid #dee2e6;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    text-align: left;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.option:hover {
+    background-color: #e9ecef;
+    border-color: var(--accent-color);
+}
+
+.option.selected {
+    background-color: var(--accent-color);
+    border-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
+}
+
+/* Styles après validation */
+.option.correct {
+    background-color: #d4edda;
+    border-color: var(--correct-color);
+}
+.option.incorrect {
+    background-color: #f8d7da;
+    border-color: var(--incorrect-color);
+}
+
+/* --- Écran des Résultats --- */
+#score-container {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+#final-score {
+    color: var(--primary-color);
+}
+
+#result-details {
+    width: 100%;
+    text-align: left;
+}
+
+.result-item {
+    background-color: var(--card-bg);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    border-left: 5px solid;
+}
+
+.result-item.correct {
+    border-left-color: var(--correct-color);
+}
+
+.result-item.incorrect {
+    border-left-color: var(--incorrect-color);
+}
+
+.result-question-text {
+    font-weight: bold;
+}
+.user-answer, .correct-answer, .explanation {
+    font-size: 0.9rem;
+    margin: 0.25rem 0;
+}
+.explanation {
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px dashed #ccc;
+    color: var(--secondary-color);
+}
