@@ -92,7 +92,7 @@
   },
   {
     "id": 8,
-    "questionText": "Que fait l'instruction XSLT <xsl:value-of select='...'/> ?",
+    "questionText": "Que fait l'instruction XSLT `<xsl:value-of select='...'/>` ?",
     "options": [
       "Elle crée une nouvelle boucle.",
       "Elle insère la valeur textuelle du nœud sélectionné dans le document de sortie.",
@@ -100,7 +100,7 @@
       "Elle copie un nœud entier avec ses enfants."
     ],
     "correctAnswers": [1],
-    "explanation": "<xsl:value-of> est utilisé pour extraire et afficher la valeur textuelle d'un élément ou d'un attribut sélectionné par une expression XPath.",
+    "explanation": "`<xsl:value-of>` est utilisé pour extraire et afficher la valeur textuelle d'un élément ou d'un attribut sélectionné par une expression XPath.",
     "sourceSlide": 173
   },
   {
@@ -131,7 +131,7 @@
   },
   {
     "id": 11,
-    "questionText": "Dans une DTD, le mot-clé #IMPLIED pour un attribut signifie que :",
+    "questionText": "Dans une DTD, le mot-clé `#IMPLIED` pour un attribut signifie que :",
     "options": [
       "L'attribut est obligatoire.",
       "L'attribut a une valeur fixe.",
@@ -139,7 +139,7 @@
       "La valeur de l'attribut est implicite."
     ],
     "correctAnswers": [2],
-    "explanation": "#IMPLIED indique que la présence de l'attribut n'est pas obligatoire. #REQUIRED le rend obligatoire.",
+    "explanation": "`#IMPLIED` indique que la présence de l'attribut n'est pas obligatoire. `#REQUIRED` le rend obligatoire.",
     "sourceSlide": 45
   },
   {
@@ -178,12 +178,12 @@
       "Les deux, <xsd:unique> et <xsd:key>"
     ],
     "correctAnswers": [3],
-    "explanation": "On peut utiliser <xsd:unique> pour garantir l'unicité, et <xsd:key> qui garantit aussi l'unicité tout en spécifiant que la valeur peut être utilisée comme clé pour des références (<xsd:keyref>).",
+    "explanation": "On peut utiliser `<xsd:unique>` pour garantir l'unicité, et `<xsd:key>` qui garantit aussi l'unicité tout en spécifiant que la valeur peut être utilisée comme clé pour des références (`<xsd:keyref>`).",
     "sourceSlide": 107
   },
   {
     "id": 15,
-    "questionText": "Une section CDATA <![CDATA[...]]> permet de :",
+    "questionText": "Une section CDATA `<![CDATA[...]]>` permet de :",
     "options": [
       "Cacher des données à l'utilisateur.",
       "Inclure du code binaire.",
@@ -193,5 +193,341 @@
     "correctAnswers": [2],
     "explanation": "CDATA (Character Data) crée une section où le contenu n'est pas analysé (parsed) par le processeur XML. C'est utile pour insérer des blocs de code ou du texte qui contient des caractères qui pourraient autrement être interprétés comme du balisage.",
     "sourceSlide": 32
+  },
+  {
+    "id": 16,
+    "questionText": "Quelle est la syntaxe pour déclarer une entité générale externe dans une DTD ?",
+    "options": [
+      "<!ENTITY nom SYSTEM 'url'>",
+      "<!ENTITY % nom SYSTEM 'url'>",
+      "<!ENTITY nom PUBLIC 'id' 'url'>",
+      "Pas de bonne réponse."
+    ],
+    "correctAnswers": [0],
+    "explanation": "Une entité générale (utilisée dans le document XML avec &nom;) est déclarée sans le '%'. Le '%' est réservé aux entités paramètres (utilisées dans la DTD elle-même).",
+    "sourceSlide": 55
+  },
+  {
+    "id": 17,
+    "questionText": "En XSLT, quelle est la fonction de l'élément `<xsl:apply-templates/>` ?",
+    "options": [
+      "Appliquer des styles CSS au template.",
+      "Arrêter le traitement du document.",
+      "Appeler une fonction JavaScript.",
+      "Demander au processeur de continuer le traitement en cherchant des templates pour les nœuds enfants du nœud courant."
+    ],
+    "correctAnswers": [3],
+    "explanation": "C'est le mécanisme de base du traitement récursif en XSLT. Il passe la main au processeur pour trouver les règles (templates) correspondantes pour les descendants du nœud actuel.",
+    "sourceSlide": 171
+  },
+  {
+    "id": 18,
+    "questionText": "Lequel de ces types de données N'EST PAS un type simple prédéfini dans XML Schema (XSD) ?",
+    "options": [
+      "xsd:string",
+      "xsd:date",
+      "xsd:integer",
+      "xsd:object"
+    ],
+    "correctAnswers": [3],
+    "explanation": "XML Schema propose une grande variété de types de données simples (string, decimal, boolean, date, etc.), mais le concept d' 'objet' comme en programmation n'est pas un type de données simple. On le modélise avec des 'complexType'.",
+    "sourceSlide": 71
+  },
+  {
+    "id": 19,
+    "questionText": "Quelle instruction de traitement (PI) lie une feuille de style CSS à un document XML ?",
+    "options": [
+      "<?xml-stylesheet type='text/css' href='style.css'?>",
+      "<?css-stylesheet href='style.css'?>",
+      "<link rel='stylesheet' type='text/css' href='style.css'/>",
+      "<?xml-link type='text/css' href='style.css'?>"
+    ],
+    "correctAnswers": [0],
+    "explanation": "La même instruction de traitement `<?xml-stylesheet ... ?>` est utilisée pour lier des feuilles de style CSS ou XSLT, en changeant simplement la valeur de l'attribut `type`.",
+    "sourceSlide": 29
+  },
+  {
+    "id": 20,
+    "questionText": "Dans un Schéma XML, l'élément `<xsd:sequence>` à l'intérieur d'un `<xsd:complexType>` impose :",
+    "options": [
+      "Que les éléments enfants peuvent apparaître dans n'importe quel ordre.",
+      "Qu'un seul des éléments enfants peut apparaître.",
+      "Que les éléments enfants doivent apparaître dans l'ordre exact de leur déclaration.",
+      "Qu'il doit y avoir une séquence numérique dans les données."
+    ],
+    "correctAnswers": [2],
+    "explanation": "`<xsd:sequence>` impose un ordre strict. Pour un ordre quelconque, on utilise `<xsd:all>`, et pour un choix exclusif, on utilise `<xsd:choice>`.",
+    "sourceSlide": 77
+  },
+  {
+    "id": 21,
+    "questionText": "En XPath, que signifie le point `.` ?",
+    "options": [
+      "Le parent du nœud courant.",
+      "La racine du document.",
+      "Le nœud courant lui-même.",
+      "N'importe quel caractère."
+    ],
+    "correctAnswers": [2],
+    "explanation": "Le point `.` est le raccourci de l'axe `self::node()`, il représente donc le contexte actuel, c'est-à-dire le nœud sur lequel le processeur est positionné.",
+    "sourceSlide": 151
+  },
+  {
+    "id": 22,
+    "questionText": "Quelle est la principale fonction de XSL-FO (Formatting Objects) ?",
+    "options": [
+      "Interroger des bases de données XML.",
+      "Naviguer dans un document XML.",
+      "Décrire la mise en page avancée d'un document pour l'impression (PDF, etc.).",
+      "Assurer la sécurité des transactions XML."
+    ],
+    "correctAnswers": [2],
+    "explanation": "XSL-FO est un langage de description de page. Il permet de contrôler précisément la mise en page (marges, colonnes, en-têtes) pour générer des documents de haute qualité, souvent des PDF.",
+    "sourceSlide": 183
+  },
+  {
+    "id": 23,
+    "questionText": "Un document XML doit toujours commencer par :",
+    "options": [
+      "Une déclaration `<!DOCTYPE ...>`",
+      "L'élément racine.",
+      "Une déclaration `<?xml version='1.0' ... ?>`",
+      "Un commentaire."
+    ],
+    "correctAnswers": [2],
+    "explanation": "Bien qu'optionnelle dans certains contextes, la déclaration XML est la première chose qu'un processeur s'attend à trouver. Elle spécifie la version de XML et l'encodage des caractères.",
+    "sourceSlide": 22
+  },
+  {
+    "id": 24,
+    "questionText": "L'API 'SAX' pour parser du XML est une approche...",
+    "options": [
+      "Basée sur la construction d'un arbre en mémoire (DOM).",
+      "Basée sur les événements (event-driven).",
+      "Basée sur des requêtes de type SQL.",
+      "Exclusivement visuelle."
+    ],
+    "correctAnswers": [1],
+    "explanation": "SAX (Simple API for XML) est un parseur événementiel. Il parcourt le document et déclenche des événements (début d'élément, fin d'élément, etc.) sans charger tout l'arbre en mémoire, ce qui le rend efficace pour les très gros fichiers.",
+    "sourceSlide": 15
+  },
+  {
+    "id": 25,
+    "questionText": "En XML, les noms de balises sont sensibles à la casse (case-sensitive).",
+    "options": [
+      "Vrai",
+      "Faux"
+    ],
+    "correctAnswers": [0],
+    "explanation": "Oui, `<Livre>` et `<livre>` sont considérés comme deux balises différentes en XML. C'est une différence majeure avec HTML.",
+    "sourceSlide": 28
+  },
+  {
+    "id": 26,
+    "questionText": "Dans un Schéma XML, comment rendre un attribut 'pays' obligatoire avec une valeur par défaut 'Sénégal' ?",
+    "options": [
+      "<xsd:attribute name='pays' use='required' default='Sénégal'/>",
+      "<xsd:attribute name='pays' use='optional' default='Sénégal'/>",
+      "C'est impossible, un attribut ne peut pas être à la fois 'required' et avoir une valeur par défaut.",
+      "<xsd:attribute name='pays' required='true' default='Sénégal'/>"
+    ],
+    "correctAnswers": [2],
+    "explanation": "La spécification XML Schema stipule que 'use' et 'default' s'excluent mutuellement. Si un attribut est requis (`use='required'`), l'auteur du document DOIT fournir une valeur. S'il a une valeur par défaut, il est implicitement optionnel.",
+    "sourceSlide": 70
+  },
+  {
+    "id": 27,
+    "questionText": "L'expression XPath `count(//personne)` retourne :",
+    "options": [
+      "Le texte du dernier élément 'personne'.",
+      "Le nombre total d'éléments 'personne' dans le document.",
+      "La position du premier élément 'personne'.",
+      "Un booléen indiquant si l'élément 'personne' existe."
+    ],
+    "correctAnswers": [1],
+    "explanation": "`count()` est une fonction XPath qui prend un ensemble de nœuds en argument et retourne le nombre de nœuds dans cet ensemble.",
+    "sourceSlide": 153
+  },
+  {
+    "id": 28,
+    "questionText": "XHTML est une reformulation de HTML en tant qu'application...",
+    "options": [
+      "Java",
+      "JavaScript",
+      "CSS",
+      "XML"
+    ],
+    "correctAnswers": [3],
+    "explanation": "XHTML (eXtensible HyperText Markup Language) est une version de HTML qui se conforme aux règles strictes de syntaxe de XML. C'est un pont entre les deux mondes.",
+    "sourceSlide": 17
+  },
+  {
+    "id": 29,
+    "questionText": "Dans une DTD, que déclare `<!ELEMENT etudiant (nom, prenom?, adresse*)>` ?",
+    "options": [
+      "Un étudiant a un nom, plusieurs prénoms et une adresse.",
+      "Un étudiant a un nom, un prénom optionnel, et zéro ou plusieurs adresses.",
+      "Un étudiant a un nom, un ou plusieurs prénoms, et une adresse optionnelle.",
+      "Un étudiant peut avoir soit un nom, soit un prénom, soit une adresse."
+    ],
+    "correctAnswers": [1],
+    "explanation": "La virgule (`,`) indique une séquence. `?` indique 0 ou 1 occurrence (optionnel). `*` indique 0 ou plusieurs occurrences.",
+    "sourceSlide": 46
+  },
+  {
+    "id": 30,
+    "questionText": "Quel est le rôle de l'attribut `match` dans un template XSLT `<xsl:template match='...'>` ?",
+    "options": [
+      "Il spécifie le type de sortie (HTML, texte).",
+      "Il définit le modèle de nœuds (pattern) auquel cette règle de transformation s'applique.",
+      "Il nomme le template pour pouvoir l'appeler explicitement.",
+      "Il vérifie si le document XML correspond au schéma."
+    ],
+    "correctAnswers": [1],
+    "explanation": "L'attribut `match` contient une expression XPath qui agit comme un sélecteur. Le template sera exécuté pour chaque nœud du document source qui correspond à cette expression.",
+    "sourceSlide": 170
+  },
+  {
+    "id": 31,
+    "questionText": "Le W3C (World Wide Web Consortium) a été fondé en :",
+    "options": [
+      "1989",
+      "1994",
+      "1999",
+      "2004"
+    ],
+    "correctAnswers": [1],
+    "explanation": "Le W3C a été fondé en 1994 par Tim Berners-Lee pour standardiser les technologies du web.",
+    "sourceSlide": 18
+  },
+  {
+    "id": 32,
+    "questionText": "Pour trier les résultats d'une boucle `<xsl:for-each>` en XSLT, on utilise l'instruction :",
+    "options": [
+      "<xsl:order-by>",
+      "<xsl:sort>",
+      "<xsl:filter>",
+      "Il n'est pas possible de trier dans une boucle."
+    ],
+    "correctAnswers": [1],
+    "explanation": "L'instruction `<xsl:sort>` doit être placée comme premier enfant de `<xsl:for-each>` (ou `<xsl:apply-templates>`) pour définir les critères de tri des nœuds sélectionnés.",
+    "sourceSlide": 181
+  },
+  {
+    "id": 33,
+    "questionText": "Un espace de noms (namespace) en XML sert à :",
+    "options": [
+      "Définir des variables globales.",
+      "Formater le document pour l'affichage.",
+      "Éviter les conflits de noms de balises lorsque l'on mélange des vocabulaires différents.",
+      "Commenter le code XML."
+    ],
+    "correctAnswers": [2],
+    "explanation": "Les espaces de noms permettent d'utiliser des balises comme `<title>` pour un livre et `<title>` pour une personne dans le même document sans ambiguïté, en les associant à des URI uniques.",
+    "sourceSlide": 117
+  },
+  {
+    "id": 34,
+    "questionText": "Lequel de ces opérateurs est utilisé en XPath pour une union d'ensembles de nœuds ?",
+    "options": [
+      "&",
+      "|",
+      "&&",
+      "or"
+    ],
+    "correctAnswers": [1],
+    "explanation": "La barre verticale `|` permet de combiner les résultats de deux expressions XPath. Par exemple, `//auteur | //editeur` sélectionnera tous les nœuds `auteur` ET tous les nœuds `editeur`.",
+    "sourceSlide": 154
+  },
+  {
+    "id": 35,
+    "questionText": "Dans un Schéma XML (XSD), que signifie `minOccurs='0'` pour un élément ?",
+    "options": [
+      "L'élément est interdit.",
+      "L'élément doit apparaître au moins une fois.",
+      "L'élément est optionnel (peut être absent).",
+      "L'élément doit contenir la valeur 0."
+    ],
+    "correctAnswers": [2],
+    "explanation": "`minOccurs` définit le nombre minimum d'occurrences. `minOccurs='0'` rend l'élément optionnel. La valeur par défaut est 1.",
+    "sourceSlide": 83
+  },
+  {
+    "id": 36,
+    "questionText": "Le concept de 'document valide' est-il obligatoire pour tous les documents XML ?",
+    "options": [
+      "Oui, un document XML doit toujours être valide.",
+      "Non, un document peut être seulement 'bien formé' pour être utilisable.",
+      "Cela dépend du navigateur.",
+      "Seulement si le document fait plus de 100 lignes."
+    ],
+    "correctAnswers": [1],
+    "explanation": "La validité (conformité à une DTD/Schéma) est une contrainte supplémentaire, souvent utilisée dans les échanges de données structurées. Un document peut parfaitement être utile en étant simplement 'bien formé'.",
+    "sourceSlide": 42
+  },
+  {
+    "id": 37,
+    "questionText": "Pour créer une référence d'un élément à un autre (comme une clé étrangère) dans une DTD, on utilise les types d'attributs :",
+    "options": [
+      "KEY et KEYREF",
+      "LINK et REF",
+      "ID et IDREF",
+      "POINTER et TARGET"
+    ],
+    "correctAnswers": [2],
+    "explanation": "Le type `ID` garantit l'unicité d'un attribut dans le document, et `IDREF` (ou `IDREFS` pour une liste) permet à un autre attribut de pointer vers cette valeur unique.",
+    "sourceSlide": 53
+  },
+  {
+    "id": 38,
+    "questionText": "XSLT est un langage de programmation dit...",
+    "options": [
+      "Impératif",
+      "Orienté objet",
+      "Fonctionnel",
+      "Déclaratif"
+    ],
+    "correctAnswers": [3],
+    "explanation": "XSLT est un langage déclaratif. On ne décrit pas 'comment' faire la transformation (les étapes), mais plutôt 'quel' résultat on veut obtenir pour chaque type de nœud rencontré.",
+    "sourceSlide": 159
+  },
+  {
+    "id": 39,
+    "questionText": "Quelle expression XPath sélectionne l'attribut `lang` de l'élément courant ?",
+    "options": [
+      "lang",
+      "//lang",
+      "@lang",
+      "attribute::lang"
+    ],
+    "correctAnswers": [2],
+    "explanation": "Le caractère `@` est le raccourci pour l'axe `attribute::`, permettant de sélectionner les attributs d'un nœud.",
+    "sourceSlide": 152
+  },
+  {
+    "id": 40,
+    "questionText": "Dans un Schéma XML, comment peut-on restreindre un type `xsd:string` pour qu'il n'accepte que des chaînes de 10 chiffres (comme un ISBN) ?",
+    "options": [
+      "En utilisant une facette `length` avec la valeur 10.",
+      "En utilisant une facette `pattern` avec une expression régulière comme `[0-9]{10}`.",
+      "En créant un `complexType` avec 10 éléments `digit`.",
+      "Ce n'est pas possible, il faut utiliser un type `xsd:integer`."
+    ],
+    "correctAnswers": [1],
+    "explanation": "Les facettes de restriction permettent d'affiner les types de base. La facette `pattern` est très puissante car elle permet d'appliquer une contrainte via une expression régulière.",
+    "sourceSlide": 96
+  },
+  {
+    "id": 41,
+    "questionText": "La technologie Apache FOP est un processeur qui transforme des documents XSL-FO principalement en quel format ?",
+    "options": [
+      "HTML",
+      "Word (.doc)",
+      "Image (.jpg)",
+      "PDF"
+    ],
+    "correctAnswers": [3],
+    "explanation": "Apache FOP (Formatting Objects Processor) est principalement utilisé pour produire des documents PDF de haute qualité à partir d'arbres XSL-FO, bien qu'il supporte d'autres formats de sortie.",
+    "sourceSlide": 196
   }
 ]
